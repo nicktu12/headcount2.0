@@ -70,7 +70,6 @@ export default class DistrictRepository {
         count++;
         sum += school.data[year];
       }
-
     }
     if (returnSchoolName) {
       return {
