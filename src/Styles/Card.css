@@ -1,0 +1,15 @@
+.card {
+  width: 200px;
+  font-size: .85em;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px dotted black;
+  background-color: rgba(100, 25, 100, 0.3); }
+
+.card-header {
+  font-size: 1.05em;
+  font-weight: bold; }
+
+.p-container {
+  width: 80px;
+  margin: 10px auto 10px auto; }

@@ -5,27 +5,27 @@ const Card = (props) => {
   let keys = Object.keys(props.dataNode);
 
   return (
-    <div>
-      <h1>
+    <div className="card">
+      <h1 className="card-header">
         {props.location}
       </h1>
-      <div>
+      <p>
         {
           keys.map((key)=>{
             return (
-              <p>
-                {props.dataNode[key]}
-              </p>
-            );
+              <div className="p-container">
+                <p>{key}: {props.dataNode[key]}</p>
+              </div>
+            )
           })
         }
-      </div>
+      </p>
     </div>
   );
 };
 
 Card.propTypes = {
-  dataNode: PropTypes.objectOf(PropTypes.number),
+  data: PropTypes.objectOf(PropTypes.number),
   location: PropTypes.string
 };
 

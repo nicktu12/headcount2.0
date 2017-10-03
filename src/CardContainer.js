@@ -6,7 +6,7 @@ const CardContainer = (props) => {
   let array = props.formattedData.kinderData;
 
   return (
-    <div>
+    <div className="card-container">
       {array.map((singleData)=>{
         return (
           <Card location={singleData.location}
