@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Helper from './helper';
+import CardContainer from './CardContainer';
 import kinderData from '../data/kindergartners_in_full_day_program';
 
 class App extends Component {
@@ -42,6 +43,7 @@ class App extends Component {
     return (
       <div>
         <input type="text" value={ this.state.inputValue } onChange={this.onChange}/>
+        {/* // put this in controls??? */}
         <h1>{this.state.school
           ? this.state.school.location
           : ""}</h1>
@@ -50,6 +52,7 @@ class App extends Component {
             <h2 key={ index }>{ year }</h2>
           );
         })}
+        <CardContainer formattedData={this.helper} />
       </div>
 
     );
