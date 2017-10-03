@@ -1,0 +1,31 @@
+.card {
+  width: 200px;
+  font-size: .85em;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px dotted black;
+  background-color: rgba(100, 25, 100, 0.3); }
+
+.card-header {
+  font-size: 1.05em;
+  font-weight: bold; }
+
+.p-container {
+  width: 80px;
+  margin: 10px auto 10px auto; }
+
+body {
+  background-color: lavender; }
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
