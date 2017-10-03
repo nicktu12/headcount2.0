@@ -1,6 +1,5 @@
 @import 'variables.scss';
 
-
 .card {
   width: 200px;
   font-size: .85em;
@@ -13,9 +12,22 @@
 .card-header {
   font-size: 1.05em;
   font-weight: bold;
+  margin: 5px;
+  text-align: center;
 }
 
 .p-container {
   width: 80px;
   margin: 10px auto 10px auto;
+}
+
+.less-than-half {
+  color: red;
+  font-size: .75em;
+}
+
+.more-than-half {
+  color: green;
+  font-size: .85em;
+  font-weight: bold;
 }

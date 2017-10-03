@@ -12,11 +12,15 @@ const Card = (props) => {
       <p>
         {
           keys.map((key)=>{
+            let conditionalClass;
+            props.dataNode[key] < .5 ? conditionalClass = "less-than-half" : conditionalClass = "more-than-half"
             return (
               <div className="p-container">
-                <p>{key}: {props.dataNode[key]}</p>
+                <p className={conditionalClass}>
+                  {key}: {props.dataNode[key]}
+                </p>
               </div>
-            )
+            );
           })
         }
       </p>
@@ -25,7 +29,7 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  data: PropTypes.objectOf(PropTypes.number),
+  dataNode: PropTypes.objectOf(PropTypes.number),
   location: PropTypes.string
 };
 
