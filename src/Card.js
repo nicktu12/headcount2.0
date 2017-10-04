@@ -5,7 +5,8 @@ const Card = (props) => {
   let keys = Object.keys(props.dataNode);
 
   return (
-    <div className="card">
+    <div className="card"
+      onClick={props.handleClick}>
       <h1 className="card-header">
         {props.location}
       </h1>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Helper from './helper';
 import CardContainer from './CardContainer';
+import CompareContainer from './CompareContainer';
 import kinderData from '../data/kindergartners_in_full_day_program';
 
 class App extends Component {
@@ -18,7 +19,7 @@ class App extends Component {
 
     // Bind
     this.onChange = this.onChange.bind(this);
-
+    this.handleClick = this.handleClick.bind(this);
   }
 
   onChange(event) {
@@ -38,6 +39,10 @@ class App extends Component {
     }
   }
 
+  handleClick(event){
+    console.log('by your side');
+  }
+
   render() {
     return (
       <div>
@@ -54,7 +59,11 @@ class App extends Component {
             <h2 key={ index }>{ year }</h2>
           );
         })}
-        <CardContainer formattedData={this.helper} />
+        <CompareContainer/>
+        <CardContainer
+          formattedData={this.helper}
+          handleClick={this.handleClick}
+        />
       </div>
 
     );
