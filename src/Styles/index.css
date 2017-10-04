@@ -33,6 +33,10 @@ body {
   justify-content: space-around;
   flex-wrap: wrap; }
 
+.compare-container {
+  height: 500px;
+  background-color: white; }
+
 * {
   margin: 0;
   padding: 0;
