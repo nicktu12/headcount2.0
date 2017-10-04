@@ -14,7 +14,9 @@ class App extends Component {
     this.state = {
       school: null,
       years: [],
-      inputValue: ""
+      inputValue: "",
+      numberOfSelected: 0,
+      schoolsSelected: []
     };
 
     // Bind
@@ -39,8 +41,12 @@ class App extends Component {
     }
   }
 
-  handleClick(event){
-    console.log('by your side');
+  handleClick(location){
+    console.log(location);
+    this.setState({
+      numberOfSelected: this.state.numberOfSelected + 1,
+      // schoolsSelected: this.state.schoolsSelected.push(location)
+    });
   }
 
   render() {
@@ -59,10 +65,11 @@ class App extends Component {
             <h2 key={ index }>{ year }</h2>
           );
         })}
-        <CompareContainer/>
+        <CompareContainer schoolsSelected={this.state.schoolsSelected}/>
         <CardContainer
           formattedData={this.helper}
           handleClick={this.handleClick}
+          numberOfSelected={this.state.numberOfSelected}
         />
       </div>
 
