@@ -11,15 +11,17 @@ export default class DistrictRepository {
 
       if (uniqueArray.indexOf(dataObj.Location) === -1) {
         uniqueArray.push(dataObj.Location);
-        returnArray.push({"location": dataObj.Location.toUpperCase(), "data": {}});
+        returnArray.push(
+          {"location": dataObj.Location.toUpperCase(), "data": {}}
+        );
       }
 
       returnArray.forEach((returnObj) => {
-        if (returnObj.location.toUpperCase() === dataObj.Location.toUpperCase()) {
+        if (returnObj.location.toUpperCase()===dataObj.Location.toUpperCase()) {
           if (isNaN(dataObj.Data)) {
             dataObj.Data = 0;
           }
-          returnObj.data[dataObj.TimeFrame] = Math.round(1000 * dataObj.Data) / 1000;
+          returnObj.data[dataObj.TimeFrame]=Math.round(1000*dataObj.Data)/1000;
         }
       });
     });
@@ -53,6 +55,8 @@ export default class DistrictRepository {
       returnArray = this.kinderData.filter((dataObj) => {
         if (dataObj.location.indexOf(inputName) !== -1) {
           return true;
+        } else {
+          return false;
         }
       });
       return returnArray;

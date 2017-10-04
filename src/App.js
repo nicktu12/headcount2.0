@@ -41,7 +41,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <input type="text" value={ this.state.inputValue } onChange={this.onChange}/>
+        <input
+          type="text"
+          value={ this.state.inputValue }
+          onChange={this.onChange}
+        />
         <h1>{this.state.school
           ? this.state.school.location
           : ""}</h1>
