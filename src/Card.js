@@ -9,13 +9,16 @@ const Card = (props) => {
       <h1 className="card-header">
         {props.location}
       </h1>
-      <p>
+      <div>
         {
-          keys.map((key)=>{
+          keys.map((key, index)=>{
             let conditionalClass;
-            props.dataNode[key] < .5 ? conditionalClass = "less-than-half" : conditionalClass = "more-than-half"
+            props.dataNode[key] < .5
+              ? conditionalClass="less-than-half"
+              : conditionalClass="more-than-half";
             return (
-              <div className="p-container">
+              <div className="p-container"
+                key={setTimeout(Date.now(), 500)}>
                 <p className={conditionalClass}>
                   {key}: {props.dataNode[key]}
                 </p>
@@ -23,7 +26,7 @@ const Card = (props) => {
             );
           })
         }
-      </p>
+      </div>
     </div>
   );
 };
