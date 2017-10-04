@@ -1,40 +1,67 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const Card = (props) => {
-  let keys = Object.keys(props.dataNode);
+class Card extends Component {
+  constructor(props, context) {
+    super(props, context);
 
-  return (
-    <div className="card"
-      onClick={props.handleClick}>
-      <h1 className="card-header">
-        {props.location}
-      </h1>
-      <div>
-        {
-          keys.map((key, index)=>{
-            let conditionalClass;
-            props.dataNode[key] < .5
-              ? conditionalClass="less-than-half"
-              : conditionalClass="more-than-half";
-            return (
-              <div className="p-container"
-                key={setTimeout(Date.now(), 500)}>
-                <p className={conditionalClass}>
-                  {key}: {props.dataNode[key]}
-                </p>
-              </div>
-            );
-          })
-        }
+    this.state= {
+      active: false
+    }
+
+    // Binds
+
+    this.clickCard = this.clickCard.bind(this)
+  }
+
+  clickCard() {
+    if (this.props.numberOfSelected < 2) {
+      this.setState({
+        active: !this.state.active
+      })
+
+      this.props.handleClick(this.props.location);
+    }
+  }
+
+  render() {
+    let keys = Object.keys(this.props.dataNode);
+
+    return (
+      <div className={this.state.active ? "card active" : "card"}
+        onClick={this.clickCard}>
+        <h1 className="card-header">
+          {this.props.location}
+        </h1>
+        <div>
+          {
+            keys.map((key, index)=>{
+              let conditionalClass;
+              this.props.dataNode[key] < .5
+                ? conditionalClass="less-than-half"
+                : conditionalClass="more-than-half";
+              return (
+                <div className="p-container"
+                  key={index}>
+                  <p className={conditionalClass}>
+                    {key}: {this.props.dataNode[key]}
+                  </p>
+                </div>
+              );
+            })
+          }
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+
+}
 
 Card.propTypes = {
   dataNode: PropTypes.objectOf(PropTypes.number),
-  location: PropTypes.string
+  location: PropTypes.string,
+  handleClick: PropTypes.func,
+  numberOfSelected: PropTypes.number
 };
 
 export default Card;
