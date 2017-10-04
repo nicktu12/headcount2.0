@@ -11,6 +11,7 @@ const CardContainer = (props) => {
         return (
           <Card location={singleData.location}
             dataNode={singleData.data}
+            key={setTimeout(Date.now(), 500)}
           />
         );
       })}
