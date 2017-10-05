@@ -4,28 +4,26 @@ import PropTypes from 'prop-types';
 class Card extends Component {
   constructor(props, context) {
     super(props, context);
-
     this.state= {
       active: false
-    }
+    };
 
-    // Binds
-
-    this.clickCard = this.clickCard.bind(this)
+    this.clickCard = this.clickCard.bind(this);
   }
 
   clickCard() {
     if (this.props.numberOfSelected < 2) {
       this.setState({
         active: !this.state.active
-      })
+      });
 
       this.props.handleClick(this.props.location);
     }
   }
 
   render() {
-    let keys = Object.keys(this.props.dataNode);
+    let dataNode = this.props.dataNode;
+    let keysArray = Object.keys(dataNode);
 
     return (
       <div className={this.state.active ? "card active" : "card"}
@@ -35,16 +33,16 @@ class Card extends Component {
         </h1>
         <div>
           {
-            keys.map((key, index)=>{
+            keysArray.map((key, index)=>{
               let conditionalClass;
-              this.props.dataNode[key] < .5
+              dataNode[key] < .5
                 ? conditionalClass="less-than-half"
                 : conditionalClass="more-than-half";
               return (
                 <div className="p-container"
                   key={index}>
                   <p className={conditionalClass}>
-                    {key}: {this.props.dataNode[key]}
+                    {key}: {dataNode[key]}
                   </p>
                 </div>
               );

@@ -9,7 +9,8 @@ const CardContainer = (props) => {
     <div className="card-container">
       {array.map((singleData, index)=>{
         return (
-          <Card location={singleData.location}
+          <Card
+            location={singleData.location}
             dataNode={singleData.data}
             key={index}
             handleClick={props.handleClick}
@@ -23,7 +24,8 @@ const CardContainer = (props) => {
 
 CardContainer.propTypes = {
   formattedData: PropTypes.objectOf(PropTypes.array),
-  numberOfSelected: PropTypes.number
+  numberOfSelected: PropTypes.number,
+  handleClick: PropTypes.func
 };
 
 export default CardContainer;
