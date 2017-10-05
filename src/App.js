@@ -60,9 +60,17 @@ class App extends Component {
   comparedCardAverages(schools) {
 
     const array = schools.map((school)=>{
-      return this.helper.findAverage(school.location);
+      return school.location;
     })
-    console.log(array);
+    console.log(array[0], array[1]);
+
+    // lifecycle method???
+
+    if(array.length === 2) {
+      return this.helper.compareDistrictAverages(array[0], array[1])
+    }
+
+    // this.helper.compareDistrictAverages(array[0], array[1])
 
   }
 
