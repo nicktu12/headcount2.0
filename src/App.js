@@ -19,7 +19,6 @@ class App extends Component {
       schoolsSelected: []
     };
 
-    // Bind
     this.onChange = this.onChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
@@ -42,10 +41,15 @@ class App extends Component {
   }
 
   handleClick(location){
-    console.log(location);
     this.setState({
       numberOfSelected: this.state.numberOfSelected + 1,
       schoolsSelected: this.state.schoolsSelected.concat(location)
+    });
+  }
+
+  selectedCards(schools) {
+    return schools.map((school) => {
+      return this.helper.findByName(school);
     });
   }
 
@@ -59,13 +63,18 @@ class App extends Component {
         />
         <h1>{this.state.school
           ? this.state.school.location
-          : ""}</h1>
+          : ""}
+        </h1>
         {this.state.years.map((year, index) => {
           return (
             <h2 key={ index }>{ year }</h2>
           );
         })}
-        <CompareContainer schoolsSelected={this.state.schoolsSelected}/>
+        <CompareContainer
+          handleClick={this.handleClick}
+          selectedCards={this.selectedCards.bind(this)}
+          schoolsSelected={this.state.schoolsSelected}
+        />
         <CardContainer
           formattedData={this.helper}
           handleClick={this.handleClick}

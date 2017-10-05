@@ -1,24 +1,32 @@
 import React from 'react';
+import Card from './Card';
+import ComparedCard from './ComparedCard';
 import PropTypes from 'prop-types';
 
 const CompareContainer = (props) => {
-
-  // const compareSchools = (props.schoolsSelected) => {
-  //   // run helper function to compare schools
-  //   // or write a function in app - if schools selected is 2, use helper function
-  //   // throw them out into the div
-  // }
+  const array = props.selectedCards(props.schoolsSelected)
+  console.log(array);
 
   return (
     <div className="compare-container">
-      Directions go here until user chooses cards to compare
-
+      {array.map((singleData, index)=>{
+        return (
+          <Card
+            location={singleData.location}
+            dataNode={singleData.data}
+            key={index}
+            handleClick={props.handleClick}
+            numberOfSelected={props.numberOfSelected}
+          />
+        );
+      })}
     </div>
   );
 };
 
 CompareContainer.propTypes = {
-
+  schoolsSelected: PropTypes.array,
+  numberOfSelected: PropTypes.number
 };
 
 export default CompareContainer;
