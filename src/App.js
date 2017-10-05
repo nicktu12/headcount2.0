@@ -45,7 +45,7 @@ class App extends Component {
     console.log(location);
     this.setState({
       numberOfSelected: this.state.numberOfSelected + 1,
-      // schoolsSelected: this.state.schoolsSelected.push(location)
+      schoolsSelected: this.state.schoolsSelected.concat(location)
     });
   }
 
