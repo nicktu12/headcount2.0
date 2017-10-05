@@ -4,8 +4,7 @@ import ComparedCard from './ComparedCard';
 import PropTypes from 'prop-types';
 
 const CompareContainer = (props) => {
-  const array = props.selectedCards(props.schoolsSelected)
-  console.log(array);
+  const array = props.selectedCards(props.schoolsSelected);
 
   return (
     <div className="compare-container">
@@ -25,8 +24,10 @@ const CompareContainer = (props) => {
 };
 
 CompareContainer.propTypes = {
+  selectedCards: PropTypes.func,
   schoolsSelected: PropTypes.array,
-  numberOfSelected: PropTypes.number
+  numberOfSelected: PropTypes.number,
+  handleClick: PropTypes.func
 };
 
 export default CompareContainer;
