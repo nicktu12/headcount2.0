@@ -26,7 +26,8 @@ class Card extends Component {
     let keysArray = Object.keys(dataNode);
 
     return (
-      <div className={this.state.active ? "card active" : "card"}
+      <div
+        className={this.state.active ? "card active" : "card"}
         onClick={this.clickCard}>
         <h1 className="card-header">
           {this.props.location}

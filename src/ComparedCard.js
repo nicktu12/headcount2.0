@@ -2,23 +2,14 @@ import React from 'react';
 import Card from './Card';
 import PropTypes from 'prop-types';
 
-const ComparedCard = (props) => {
+const ComparedCard = ({ comparedDataFunction, schoolsSelected, selectedCards }) => {
   // console.log(props);
   return (
     <div className="compare-container">
-      
-      {/* {props.schoolsSelected.map((school, index)=>{
-        return (
-          <Card
-            location={props.school.location}
-            // dataNode={this.props.singleData.data}
-            key={index}
-            // handleClick={this.props.handleClick}
-            schoolsSelected={props.schoolsSelected}
-            numberOfSelected={props.numberOfSelected}
-          />
-        );
-      })} */}
+
+      {console.log(selectedCards(schoolsSelected))}
+      {comparedDataFunction(selectedCards(schoolsSelected))}
+
     </div>
   );
 };
