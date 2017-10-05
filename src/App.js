@@ -53,6 +53,21 @@ class App extends Component {
     });
   }
 
+  // this.helper.findAvereage
+  // this.helper.compareDistrictAverages
+  // schools is array of two objects w school data
+
+  comparedCardAverages(schools) {
+
+    const array = schools.map((school)=>{
+      return this.helper.findAverage(school.location);
+    })
+    console.log(array);
+
+  }
+
+
+
   render() {
     return (
       <div>
@@ -74,6 +89,7 @@ class App extends Component {
           handleClick={this.handleClick}
           selectedCards={this.selectedCards.bind(this)}
           schoolsSelected={this.state.schoolsSelected}
+          comparedDataFunction={this.comparedCardAverages.bind(this)}
         />
         <CardContainer
           formattedData={this.helper}

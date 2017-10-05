@@ -19,6 +19,11 @@ const CompareContainer = (props) => {
           />
         );
       })}
+      <ComparedCard
+        comparedDataFunction={props.comparedDataFunction}
+        schoolsSelected={props.schoolsSelected}
+        selectedCards={props.selectedCards}
+      />
     </div>
   );
 };
