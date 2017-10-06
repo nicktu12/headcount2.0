@@ -2,29 +2,36 @@ import React from 'react';
 import Card from './Card';
 import PropTypes from 'prop-types';
 
-const CardContainer = (props) => {
-  let array = props.formattedData.kinderData;
+class CardContainer extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state={
+      arrayData: this.props.kinderData
+    };
+  }
 
-  return (
-    <div className="card-container">
-      {array.map((singleData, index)=>{
-        return (
-          <Card
-            location={singleData.location}
-            dataNode={singleData.data}
-            key={index}
-            handleClick={props.handleClick}
-            numberOfSelected={props.numberOfSelected}
-            cardAverages={props.cardAverages}
-          />
-        );
-      })}
-    </div>
-  );
-};
+  render() {
+    return (
+      <div className="card-container">
+        {this.state.arrayData.map((singleData, index)=>{
+          return (
+            <Card
+              location={singleData.location}
+              dataNode={singleData.data}
+              key={index}
+              handleClick={this.props.handleClick}
+              numberOfSelected={this.props.numberOfSelected}
+              // cardAverages={props.cardAverages}
+            />
+          );
+        })}
+      </div>
+    );
+  }
+}
 
 CardContainer.propTypes = {
-  formattedData: PropTypes.objectOf(PropTypes.array),
+  kinderData: PropTypes.array.isRequired,
   numberOfSelected: PropTypes.number,
   handleClick: PropTypes.func,
   cardAverages: PropTypes.func

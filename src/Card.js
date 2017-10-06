@@ -7,7 +7,6 @@ class Card extends Component {
     this.state= {
       active: false
     };
-
     this.clickCard = this.clickCard.bind(this);
   }
 
@@ -17,16 +16,17 @@ class Card extends Component {
         active: !this.state.active
       });
 
-      this.props.handleClick(this.props.location);
     }
+    this.props.handleClick(this.props.location);
   }
 
   render() {
     let dataNode = this.props.dataNode;
     let keysArray = Object.keys(dataNode);
+    let average = 0;
 
     return (
-      <div
+      <button
         className={this.state.active ? "card active" : "card"}
         onClick={this.clickCard}>
         <h1 className="card-header">
@@ -35,6 +35,7 @@ class Card extends Component {
         <div>
           {
             keysArray.map((key, index)=>{
+              average += dataNode[key];
               let conditionalClass;
               dataNode[key] < .5
                 ? conditionalClass="less-than-half"
@@ -49,13 +50,16 @@ class Card extends Component {
               );
             })
           }
-          <p>
-            {
-              // console.log(props.cardAverages(this.props.location))
-            }
-          </p>
+          <div>
+            <p className="district-average">
+              District Average: &nbsp;
+              {
+                Math.round((average / keysArray.length) * 1000) / 1000
+              }
+            </p>
+          </div>
         </div>
-      </div>
+      </button>
     );
   }
 

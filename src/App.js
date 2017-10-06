@@ -10,23 +10,25 @@ class App extends Component {
     super(props, context);
 
     this.helper = new Helper(kinderData);
-
+    this.kinderData =  this.helper.kinderData;
     this.state = {
       school: null,
       years: [],
       inputValue: "",
       numberOfSelected: 0,
-      schoolsSelected: []
+      schoolsSelected: [],
+      possibleMatches: []
     };
 
+    this.onFindClick = this.onFindClick.bind(this);
     this.onChange = this.onChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleCompareClick = this.handleCompareClick.bind(this);
+    this.comparedCardAverages = this.comparedCardAverages.bind(this);
   }
 
-  onChange(event) {
-    this.setState({ inputValue: event.target.value });
-    //this should happen on submit
-    let school = this.helper.findByName(event.target.value);
+  onFindClick(event) {
+    let school = this.helper.findByName(this.state.inputValue);
 
     if (typeof school === 'object') {
       let years = [];
@@ -40,10 +42,32 @@ class App extends Component {
     }
   }
 
-  handleClick(location){
+  onChange(event) {
+    let val = event.target.value;
     this.setState({
-      numberOfSelected: this.state.numberOfSelected + 1,
-      schoolsSelected: this.state.schoolsSelected.concat(location)
+      inputValue: val,
+      possibleMatches: val ? this.helper.findAllMatches(val) : []
+    });
+
+  }
+
+  handleClick(location){
+    if (this.state.numberOfSelected < 2) {
+      this.setState({
+        numberOfSelected: this.state.numberOfSelected + 1,
+        schoolsSelected: this.state.schoolsSelected.concat(location)
+      });
+    }
+  }
+
+  handleCompareClick(location) {
+    let removeSchool = this.state.schoolsSelected.filter((school) => {
+      return location !== school;
+    });
+    this.setState({
+      numberOfSelected: this.state.numberOfSelected - 1,
+      schoolsSelected: removeSchool
+
     });
   }
 
@@ -67,8 +91,6 @@ class App extends Component {
       return school.location;
     });
 
-    // lifecycle method???
-
     if (array.length === 2) {
       return this.helper.compareDistrictAverages(array[0], array[1]);
     }
@@ -87,6 +109,19 @@ class App extends Component {
           value={ this.state.inputValue }
           onChange={this.onChange}
         />
+        <ul>
+          {this.state.possibleMatches.map((location, index) => {
+            return (
+              <li className="search-list" key={index}>{location.location}</li>
+            );
+          })}
+        </ul>
+        <button
+          className="findButton"
+          onClick={this.onFindClick}
+        >
+          Find
+        </button>
         <h1>{this.state.school
           ? this.state.school.location
           : ""}
@@ -100,13 +135,14 @@ class App extends Component {
           handleClick={this.handleClick}
           selectedCards={this.selectedCards.bind(this)}
           schoolsSelected={this.state.schoolsSelected}
-          comparedDataFunction={this.comparedCardAverages.bind(this)}
+          comparedDataFunction={this.comparedCardAverages}
+          handleCompareClick={this.handleCompareClick}
         />
         <CardContainer
-          formattedData={this.helper}
+          kinderData={this.kinderData}
           handleClick={this.handleClick}
           numberOfSelected={this.state.numberOfSelected}
-          cardAverages={this.cardAverages}
+          // cardAverages={this.cardAverages}
         />
       </div>
 
