@@ -15,7 +15,7 @@ const CompareContainer = (props) => {
               location={singleData.location}
               dataNode={singleData.data}
               key={index}
-              handleClick={props.handleClick}
+              handleClick={props.handleCompareClick}
               numberOfSelected={props.numberOfSelected}
               // cardAverage={}
             />
@@ -38,7 +38,8 @@ CompareContainer.propTypes = {
   schoolsSelected: PropTypes.array,
   numberOfSelected: PropTypes.number,
   handleClick: PropTypes.func,
-  comparedDataFunction: PropTypes.func
+  comparedDataFunction: PropTypes.func,
+  handleCompareClick: PropTypes.func
 };
 
 export default CompareContainer;
