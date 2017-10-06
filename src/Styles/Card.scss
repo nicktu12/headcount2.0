@@ -1,12 +1,12 @@
 @import 'variables.scss';
 
 .card {
+  display: inline-block;
   width: 200px;
   font-size: .85em;
-  margin-bottom: 5px;
+  margin: 10px;
   border-radius: $border-radius;
-  border: 1px dotted black;
-  background-color: rgba(100,25,100,.3);
+  background-color: rgb(37, 132, 228);
 }
 
 .card-header {

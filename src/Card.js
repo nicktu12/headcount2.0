@@ -49,6 +49,11 @@ class Card extends Component {
               );
             })
           }
+          <p>
+            {
+              // console.log(props.cardAverages(this.props.location))
+            }
+          </p>
         </div>
       </div>
     );

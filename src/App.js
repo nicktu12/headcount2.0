@@ -53,6 +53,10 @@ class App extends Component {
     });
   }
 
+  cardAverages(schoolName) {
+    this.helper.findAverage(schoolName, true);
+  }
+
   // this.helper.findAvereage
   // this.helper.compareDistrictAverages
   // schools is array of two objects w school data
@@ -61,25 +65,24 @@ class App extends Component {
 
     const array = schools.map((school)=>{
       return school.location;
-    })
-    console.log(array[0], array[1]);
+    });
 
     // lifecycle method???
 
-    if(array.length === 2) {
-      return this.helper.compareDistrictAverages(array[0], array[1])
+    if (array.length === 2) {
+      return this.helper.compareDistrictAverages(array[0], array[1]);
     }
 
     // this.helper.compareDistrictAverages(array[0], array[1])
 
   }
 
-
-
   render() {
     return (
-      <div>
+      <div className="app-render">
         <input
+          className="search-input"
+          placeholder="Search for School Here"
           type="text"
           value={ this.state.inputValue }
           onChange={this.onChange}
@@ -103,6 +106,7 @@ class App extends Component {
           formattedData={this.helper}
           handleClick={this.handleClick}
           numberOfSelected={this.state.numberOfSelected}
+          cardAverages={this.cardAverages}
         />
       </div>
 

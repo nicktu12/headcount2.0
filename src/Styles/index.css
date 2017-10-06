@@ -1,10 +1,10 @@
 .card {
+  display: inline-block;
   width: 200px;
   font-size: .85em;
-  margin-bottom: 5px;
+  margin: 10px;
   border-radius: 5px;
-  border: 1px dotted black;
-  background-color: rgba(100, 25, 100, 0.3); }
+  background-color: #2584e4; }
 
 .card-header {
   font-size: 1.05em;
@@ -25,8 +25,17 @@
   font-size: .85em;
   font-weight: bold; }
 
-body {
-  background-color: lavender; }
+.app-render {
+  text-align: center;
+  background-color: #8a8d90;
+  padding-top: 10px; }
+
+.search-input {
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
+  padding-left: 5px;
+  margin-bottom: 10px; }
 
 .card-container {
   display: flex;
@@ -34,8 +43,16 @@ body {
   flex-wrap: wrap; }
 
 .compare-container {
-  height: 500px;
-  background-color: white; }
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  justify-content: space-around; }
+
+.compared-cards {
+  color: black;
+  height: 50px;
+  text-align: center;
+  padding-top: 15px; }
 
 * {
   margin: 0;

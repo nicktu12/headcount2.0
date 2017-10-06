@@ -7,23 +7,28 @@ const CompareContainer = (props) => {
   const array = props.selectedCards(props.schoolsSelected);
 
   return (
-    <div className="compare-container">
-      {array.map((singleData, index)=>{
-        return (
-          <Card
-            location={singleData.location}
-            dataNode={singleData.data}
-            key={index}
-            handleClick={props.handleClick}
-            numberOfSelected={props.numberOfSelected}
-          />
-        );
-      })}
-      <ComparedCard
-        comparedDataFunction={props.comparedDataFunction}
-        schoolsSelected={props.schoolsSelected}
-        selectedCards={props.selectedCards}
-      />
+    <div>
+      <div className="compare-container">
+        {array.map((singleData, index)=>{
+          return (
+            <Card
+              location={singleData.location}
+              dataNode={singleData.data}
+              key={index}
+              handleClick={props.handleClick}
+              numberOfSelected={props.numberOfSelected}
+              // cardAverage={}
+            />
+          );
+        })}
+      </div>
+      <div>
+        <ComparedCard
+          comparedDataFunction={props.comparedDataFunction}
+          schoolsSelected={props.schoolsSelected}
+          selectedCards={props.selectedCards}
+        />
+      </div>
     </div>
   );
 };
@@ -32,7 +37,8 @@ CompareContainer.propTypes = {
   selectedCards: PropTypes.func,
   schoolsSelected: PropTypes.array,
   numberOfSelected: PropTypes.number,
-  handleClick: PropTypes.func
+  handleClick: PropTypes.func,
+  comparedDataFunction: PropTypes.func
 };
 
 export default CompareContainer;
