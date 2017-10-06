@@ -1,4 +1,15 @@
 .compare-container {
-  height: 500px;
-  background-color: white;
+  // background-image:  url("../../assets/books.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.compared-cards {
+  // background: brown;
+  color: black;
+  height: 50px;
+  text-align: center;
+  padding-top: 15px;
 }

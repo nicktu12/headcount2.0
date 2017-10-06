@@ -5,21 +5,18 @@ import PropTypes from 'prop-types';
 const ComparedCard = ({ comparedDataFunction, schoolsSelected, selectedCards }) => {
 
   return (
-    <div className="compare-container">
-
-      {console.log(comparedDataFunction(selectedCards(schoolsSelected)))}
-      {/* {comparedDataFunction(selectedCards(schoolsSelected))} */}
-
+    <div className="compared-cards">
       {
         comparedDataFunction(selectedCards(schoolsSelected)) &&
         comparedDataFunction(selectedCards(schoolsSelected)).compared
       }
-
     </div>
   );
 };
 
 ComparedCard.propTypes = {
+  selectedCards: PropTypes.func,
+  comparedDataFunction: PropTypes.func,
   schoolsSelected: PropTypes.array,
   numberOfSelected: PropTypes.number
 };

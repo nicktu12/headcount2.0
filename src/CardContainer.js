@@ -15,6 +15,7 @@ const CardContainer = (props) => {
             key={index}
             handleClick={props.handleClick}
             numberOfSelected={props.numberOfSelected}
+            cardAverages={props.cardAverages}
           />
         );
       })}
@@ -25,7 +26,8 @@ const CardContainer = (props) => {
 CardContainer.propTypes = {
   formattedData: PropTypes.objectOf(PropTypes.array),
   numberOfSelected: PropTypes.number,
-  handleClick: PropTypes.func
+  handleClick: PropTypes.func,
+  cardAverages: PropTypes.func
 };
 
 export default CardContainer;
