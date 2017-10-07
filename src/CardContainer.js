@@ -10,6 +10,12 @@ class CardContainer extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      arrayData: nextProps.kinderData
+    })
+  }
+
   render() {
     return (
       <div className="card-container">
