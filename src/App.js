@@ -109,10 +109,14 @@ class App extends Component {
           value={ this.state.inputValue }
           onChange={this.onChange}
         />
-        <ul>
-          {this.state.possibleMatches.map((location, index) => {
+        <ul className="search-list">
+          {this.state.possibleMatches.map((location, index, event) => {
             return (
-              <li className="search-list" key={index}>{location.location}</li>
+              <li
+                href="location"
+                className="list-items"
+                key={index}>{location.location}
+              </li>
             );
           })}
         </ul>

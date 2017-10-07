@@ -5,11 +5,16 @@ import PropTypes from 'prop-types';
 const ComparedCard = ({ comparedDataFunction, schoolsSelected, selectedCards }) => {
 
   return (
-    <div className="compared-cards">
-      {
-        comparedDataFunction(selectedCards(schoolsSelected)) &&
-        comparedDataFunction(selectedCards(schoolsSelected)).compared
-      }
+    <div>
+      <div className="compared-cards">
+        {
+          comparedDataFunction(selectedCards(schoolsSelected)) &&
+          comparedDataFunction(selectedCards(schoolsSelected)).compared
+        }
+      </div>
+      <button>
+        Clear Comparison
+      </button>
     </div>
   );
 };

@@ -13,3 +13,18 @@
   padding-left: 5px;
   margin-bottom: 10px;
 }
+
+.search-list {
+  background: white;
+  max-height: 200px;
+  overflow-y: scroll;
+  margin: 0 auto 0 auto;
+  width: 250px;
+}
+
+.list-items {
+  border-bottom: 1px solid lightgrey;
+  padding-left: 3px;
+  text-align: left;
+  text-decoration: none;
+  }
