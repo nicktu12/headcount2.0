@@ -17,14 +17,13 @@ const CompareContainer = (props) => {
               key={index}
               handleClick={props.handleCompareClick}
               numberOfSelected={props.numberOfSelected}
-              // cardAverage={}
             />
           );
         })}
       </div>
       <div>
         <ComparedCard
-          comparedDataFunction={props.comparedDataFunction}
+          compareData={props.compareData}
           schoolsSelected={props.schoolsSelected}
           selectedCards={props.selectedCards}
         />
@@ -38,7 +37,7 @@ CompareContainer.propTypes = {
   schoolsSelected: PropTypes.array,
   numberOfSelected: PropTypes.number,
   handleClick: PropTypes.func,
-  comparedDataFunction: PropTypes.func,
+  compareData: PropTypes.func,
   handleCompareClick: PropTypes.func
 };
 
