@@ -10,32 +10,27 @@ class CompareContainer extends Component {
     && this.props.schoolsSelected !== undefined;
   }
 
-  render(){
-    const array = this.props.selectedCards(this.props.schoolsSelected);
-
-    return (
+  return (
+    <div>
+      <div className="compare-container">
+        {array.map((singleData, index)=>{
+          return (
+            <Card
+              location={singleData.location}
+              dataNode={singleData.data}
+              key={index}
+              handleClick={props.handleCompareClick}
+              numberOfSelected={props.numberOfSelected}
+            />
+          );
+        })}
+      </div>
       <div>
-        <div className="compare-container">
-          {array.map((singleData, index)=>{
-            return (
-              <Card
-                location={singleData.location}
-                dataNode={singleData.data}
-                key={index}
-                handleClick={this.props.handleCompareClick}
-                numberOfSelected={this.props.numberOfSelected}
-                // cardAverage={}
-              />
-            );
-          })}
-        </div>
-        <div>
-          <ComparedCard
-            comparedDataFunction={this.props.comparedDataFunction}
-            schoolsSelected={this.props.schoolsSelected}
-            selectedCards={this.props.selectedCards}
-          />
-        </div>
+        <ComparedCard
+          compareData={props.compareData}
+          schoolsSelected={props.schoolsSelected}
+          selectedCards={props.selectedCards}
+        />
       </div>
     );
   }
@@ -46,7 +41,7 @@ CompareContainer.propTypes = {
   schoolsSelected: PropTypes.array,
   numberOfSelected: PropTypes.number,
   handleClick: PropTypes.func,
-  comparedDataFunction: PropTypes.func,
+  compareData: PropTypes.func,
   handleCompareClick: PropTypes.func
 };
 

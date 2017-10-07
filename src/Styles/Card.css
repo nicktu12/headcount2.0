@@ -3,8 +3,12 @@
   width: 200px;
   font-size: .85em;
   margin: 10px;
+  border: none;
   border-radius: 5px;
   background-color: #2584e4; }
+
+.active {
+  border: 2px solid green; }
 
 .card-header {
   font-size: 1.05em;

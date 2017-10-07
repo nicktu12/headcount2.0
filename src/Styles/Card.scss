@@ -5,8 +5,13 @@
   width: 200px;
   font-size: .85em;
   margin: 10px;
+  border: none;
   border-radius: $border-radius;
   background-color: rgb(37, 132, 228);
+}
+
+.active {
+  border: 2px solid green;
 }
 
 .card-header {
