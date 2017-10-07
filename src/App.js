@@ -81,9 +81,15 @@ class App extends Component {
   // schoolsSelected is not in the array yet!
 
   handleClick(location){
-    if (this.state.numberOfSelected < 2) {
+
+    //this code is breaking our shit/stuff
+    // const locationFound = this.state.schoolsSelected.find((location) => {
+    //   return location;
+    // });
+    const numSelected = this.state.numberOfSelected;
+    if (numSelected < 2) {
       this.setState({
-        numberOfSelected: this.state.numberOfSelected + 1,
+        numberOfSelected: numSelected + 1,
         schoolsSelected: this.state.schoolsSelected.concat(location)
       });
     }
@@ -96,7 +102,6 @@ class App extends Component {
     this.setState({
       numberOfSelected: this.state.numberOfSelected - 1,
       schoolsSelected: removeSchool
-
     });
   }
 
@@ -181,7 +186,8 @@ class App extends Component {
           );
         })}
         <CompareContainer
-          handleClick={this.handleClick}
+          // handleClick={this.handleClick}
+
           selectedCards={this.selectedCards.bind(this)}
           schoolsSelected={this.state.schoolsSelected}
           comparedDataFunction={this.comparedCardAverages}

@@ -19,7 +19,8 @@ class Card extends Component {
   }
 
   clickCard() {
-    if (this.props.numberOfSelected < 2) {
+    console.log(this.props.numberOfSelected);
+    if (this.props.numberOfSelected < 1) {
       this.setState({
         active: !this.state.active
       });
