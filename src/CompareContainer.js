@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Card from './Card';
 import ComparedCard from './ComparedCard';
 import PropTypes from 'prop-types';
 
-const CompareContainer = (props) => {
-  const array = props.selectedCards(props.schoolsSelected);
+class CompareContainer extends Component {
+
+  shouldComponentUpdate(nextProps, nextState){
+    return this.props.schoolsSelected[0] !== nextProps.schoolsSelected[1]
+    && this.props.schoolsSelected !== undefined;
+  }
 
   return (
     <div>
@@ -28,8 +32,8 @@ const CompareContainer = (props) => {
           selectedCards={props.selectedCards}
         />
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 CompareContainer.propTypes = {
