@@ -52,9 +52,18 @@ class App extends Component {
   }
 
   handleClick(location){
-    if (this.state.numberOfSelected < 2) {
+
+    //this code is breaking our shit/stuff
+    const locationFound = this.state.schoolsSelected.find((location) => {
+      return location;
+    });
+    const numSelected = this.state.numberOfSelected;
+
+    console.log(location);
+    console.log(locationFound);
+    if (numSelected < 2 && !locationFound) {
       this.setState({
-        numberOfSelected: this.state.numberOfSelected + 1,
+        numberOfSelected: numSelected + 1,
         schoolsSelected: this.state.schoolsSelected.concat(location)
       });
     }
@@ -109,10 +118,14 @@ class App extends Component {
           value={ this.state.inputValue }
           onChange={this.onChange}
         />
-        <ul>
-          {this.state.possibleMatches.map((location, index) => {
+        <ul className="search-list">
+          {this.state.possibleMatches.map((location, index, event) => {
             return (
-              <li className="search-list" key={index}>{location.location}</li>
+              <li
+                href="location"
+                className="list-items"
+                key={index}>{location.location}
+              </li>
             );
           })}
         </ul>
@@ -135,7 +148,7 @@ class App extends Component {
           handleClick={this.handleClick}
           selectedCards={this.selectedCards.bind(this)}
           schoolsSelected={this.state.schoolsSelected}
-          comparedDataFunction={this.comparedCardAverages}
+          compareData={this.comparedCardAverages}
           handleCompareClick={this.handleCompareClick}
         />
         <CardContainer
