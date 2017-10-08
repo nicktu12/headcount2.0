@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Helper from '../helper';
 import CardContainer from '../CardContainer/CardContainer';
 import CompareContainer from '../CompareContainer/CompareContainer';
-import DataButton from '../DataButton/DataButton';
 import Controls from '../Controls/Controls';
 import kinderData from '../../data/kindergartners_in_full_day_program';
 import hsGradRatesData from '../../data/high_school_graduation_rates';

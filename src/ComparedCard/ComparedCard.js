@@ -1,5 +1,4 @@
 import React from 'react';
-// import Card from './Card';
 import PropTypes from 'prop-types';
 
 const ComparedCard = ({ compareData, schoolsSelected, selectedCards }) => {
@@ -17,8 +16,7 @@ const ComparedCard = ({ compareData, schoolsSelected, selectedCards }) => {
 ComparedCard.propTypes = {
   selectedCards: PropTypes.func,
   compareData: PropTypes.func,
-  schoolsSelected: PropTypes.array,
-  numberOfSelected: PropTypes.number
+  schoolsSelected: PropTypes.array
 };
 
 export default ComparedCard;
