@@ -10,27 +10,32 @@ class CompareContainer extends Component {
     && this.props.schoolsSelected !== undefined;
   }
 
-  return (
-    <div>
-      <div className="compare-container">
-        {array.map((singleData, index)=>{
-          return (
-            <Card
-              location={singleData.location}
-              dataNode={singleData.data}
-              key={index}
-              handleClick={props.handleCompareClick}
-              numberOfSelected={props.numberOfSelected}
-            />
-          );
-        })}
-      </div>
+  render(){
+    const array = this.props.selectedCards(this.props.schoolsSelected);
+
+    return (
       <div>
-        <ComparedCard
-          compareData={props.compareData}
-          schoolsSelected={props.schoolsSelected}
-          selectedCards={props.selectedCards}
-        />
+        <div className="compare-container">
+          {array.map((singleData, index)=>{
+            return (
+              <Card
+                location={singleData.location}
+                dataNode={singleData.data}
+                key={index}
+                handleClick={this.props.handleCompareClick}
+                numberOfSelected={this.props.numberOfSelected}
+                // cardAverage={}
+              />
+            );
+          })}
+        </div>
+        <div>
+          <ComparedCard
+            compareData={this.props.compareData}
+            schoolsSelected={this.props.schoolsSelected}
+            selectedCards={this.props.selectedCards}
+          />
+        </div>
       </div>
     );
   }
