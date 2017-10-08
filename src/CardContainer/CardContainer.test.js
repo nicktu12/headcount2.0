@@ -5,28 +5,31 @@ import CardContainer from './CardContainer';
 
 describe('Card Container', ()=>{
   it('should match the Card Container snapshot', () => {
-    const cards = [{data: {2004: 2, 2005: 3}, location: 'Akron'},
-     {data: {2004: .03, 2005: 2}, location: 'Colorado'},
-     {data: {2004: 6, 2005: 3}, location: 'Summit'}]
+    const cards = [{districtData: {2004: 2, 2005: 3}, location: 'Akron'},
+      {districtData: {2004: .03, 2005: 2}, location: 'Colorado'},
+      {districtData: {2004: 6, 2005: 3}, location: 'Summit'}];
 
     const renderedComponent = shallow(
       <CardContainer kinderData={cards} />
     );
 
     expect(renderedComponent).toMatchSnapshot();
-    expect(true).toEqual(true)
-  })
+  });
 
-  it('should render a card for each data point', () => {
-    const cards = [{data: {2004: 2, 2005: 3}, location: 'Akron'},
-     {data: {2004: .03, 2005: 2}, location: 'Colorado'},
-     {data: {2004: 6, 2005: 3}, location: 'Summit'}]
+  it('should render a card for each districtData point', () => {
+    const cards = [{districtData: {2004: 2, 2005: 3}, location: 'Akron'},
+      {districtData: {2004: .03, 2005: 2}, location: 'Colorado'},
+      {districtData: {2004: 6, 2005: 3}, location: 'Summit'}];
 
-    const renderedComponent = mount(
-      <CardContainer kinderData={cards} />
+    const renderedComponent = shallow(
+      <CardContainer
+        kinderData={cards}
+        schoolsSelected={["ACADEMY 20", "COLORADO"]}
+        handleClick={jest.fn()}
+        numberOfSelected={2}
+      />
     );
-    console.log(renderedComponent.debug());
 
-    expect(renderedComponent.find('.card').length).toEqual(3)
-  })
-})
+    expect(renderedComponent.children().length).toEqual(3);
+  });
+});

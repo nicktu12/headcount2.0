@@ -9,9 +9,6 @@ describe('Data Button', ()=>{
       <DataButton dataName="Online Enrollment"/>
     );
 
-    console.log(renderedComponent.debug());
-    console.log(renderedComponent.find('button').text());
-
-    expect(renderedComponent.find('button').text).toEqual('Online Enrollment')
+    expect(renderedComponent.find('button').text()).toBe('Online Enrollment');
   });
 });
