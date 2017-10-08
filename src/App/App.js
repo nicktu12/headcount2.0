@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
-import Helper from './helper';
-import CardContainer from './CardContainer';
-import CompareContainer from './CompareContainer';
-import DataButton from './DataButton';
-import kinderData from '../data/kindergartners_in_full_day_program';
-import hsGradRatesData from '../data/high_school_graduation_rates';
-import thirdGradeTestData from '../data/3rd_grade_tests';
-import eighthGradeTestData from '../data/8th_grade_test_scores';
-import medianIncomeData from '../data/median_household_income';
-import onlineEnrollmentData from '../data/online_pupil_enrollment';
-import pupilEnrollmentData from '../data/pupil_enrollment';
-import remediationData from '../data/remediation_in_higher_education';
-import povertyData from '../data/school_aged_children_in_poverty';
-import specEdData from '../data/special_education';
-import titleIData from '../data/title_i_students';
+import Helper from '../index/helper';
+import CardContainer from '../CardContainer/CardContainer';
+import CompareContainer from '../CompareContainer/CompareContainer';
+import DataButton from '../DataButton/DataButton';
+import kinderData from '../../data/kindergartners_in_full_day_program';
+import hsGradRatesData from '../../data/high_school_graduation_rates';
+import thirdGradeTestData from '../../data/3rd_grade_tests';
+import eighthGradeTestData from '../../data/8th_grade_test_scores';
+import medianIncomeData from '../../data/median_household_income';
+import onlineEnrollmentData from '../../data/online_pupil_enrollment';
+import pupilEnrollmentData from '../../data/pupil_enrollment';
+import remediationData from '../../data/remediation_in_higher_education';
+import povertyData from '../../data/school_aged_children_in_poverty';
+import specEdData from '../../data/special_education';
+import titleIData from '../../data/title_i_students';
 
 class App extends Component {
 
-  constructor(props, context) {
-    super(props, context);
+  constructor() {
+    super();
 
     this.helper = new Helper(kinderData);
     this.kinderData =  this.helper.kinderData;
@@ -160,7 +160,7 @@ class App extends Component {
             return (
               <DataButton
                 changeDataSet={this.changeDataSet}
-                dataSet={element.data}
+                dataSet={element.districtData}
                 dataName={element.name}
                 key={index}
               />

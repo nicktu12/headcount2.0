@@ -13,4 +13,10 @@ const DataButton = ({ changeDataSet, dataSet, dataName }) => {
   );
 };
 
+DataButton.propTypes = {
+  changeDataSet: PropTypes.func,
+  dataSet: PropTypes.arrayOf(PropTypes.object),
+  dataName: PropTypes.string
+};
+
 export default DataButton;
