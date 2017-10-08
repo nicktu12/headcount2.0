@@ -32,17 +32,17 @@ class App extends Component {
       possibleMatches: [],
       dataSet: (new Helper(kinderData)).kinderData,
       dataArray: [
-        {name: "HS Graduation Rates", data: hsGradRatesData},
-        {name: "Kindergartens in Full Day Program", data: kinderData},
-        {name: "Grade 3 Test Data", data: thirdGradeTestData},
-        {name: "Grade 8 Test Data", data: eighthGradeTestData},
-        {name: "Median Household Income", data: medianIncomeData},
-        {name: "Online Enrollment", data: onlineEnrollmentData},
-        {name: "Pupil Enrollment", data: pupilEnrollmentData},
-        {name: "Remediation in Higher Education", data: remediationData},
-        {name: "School Aged Children in Poverty", data: povertyData},
-        {name: "Special Education Data", data: specEdData},
-        {name: "Title I Students", data: titleIData},
+        {name: "HS Graduation Rates", districtData: hsGradRatesData},
+        {name: "Kindergartens in Full Day Program", districtData: kinderData},
+        {name: "Grade 3 Test Data", districtData: thirdGradeTestData},
+        {name: "Grade 8 Test Data", districtData: eighthGradeTestData},
+        {name: "Median Household Income", districtData: medianIncomeData},
+        {name: "Online Enrollment", districtData: onlineEnrollmentData},
+        {name: "Pupil Enrollment", districtData: pupilEnrollmentData},
+        {name: "Remediation in Higher Education", districtData: remediationData},
+        {name: "School Aged Children in Poverty", districtData: povertyData},
+        {name: "Special Education Data", districtData: specEdData},
+        {name: "Title I Students", districtData: titleIData}
       ]
     };
 
@@ -88,12 +88,20 @@ class App extends Component {
     //   return location;
     // });
     const numSelected = this.state.numberOfSelected;
+    let schoolIndex = this.state.schoolsSelected.indexOf(location);
 
-    console.log(location);
-    if (numSelected < 2) {
+    if (numSelected < 2 && schoolIndex === -1){
       this.setState({
         numberOfSelected: numSelected + 1,
         schoolsSelected: this.state.schoolsSelected.concat(location)
+      });
+
+    } else if (schoolIndex !== -1) {
+      this.setState({
+        schoolsSelected: this.state.schoolsSelected.filter((school) => {
+          return school !== location;
+        }),
+        numberOfSelected: numSelected - 1
       });
     }
   }
@@ -156,7 +164,7 @@ class App extends Component {
                 dataName={element.name}
                 key={index}
               />
-            )
+            );
           })}
         </div>
         <input
@@ -172,17 +180,19 @@ class App extends Component {
               <li
                 href="location"
                 className="list-items"
-                key={index}>{location.location}
+                key={index}
+              >
+                <button
+                  onClick={() => {
+                    this.handleClick(location.location);
+                  }}
+                >{location.location}
+                </button>
+
               </li>
             );
           })}
         </ul>
-        <button
-          className="findButton"
-          onClick={this.onFindClick}
-        >
-          Find
-        </button>
         <h1>{this.state.school
           ? this.state.school.location
           : ""}
@@ -201,6 +211,7 @@ class App extends Component {
           handleCompareClick={this.handleCompareClick}
         />
         <CardContainer
+          schoolsSelected={this.state.schoolsSelected}
           kinderData={this.state.dataSet}
           handleClick={this.handleClick}
           numberOfSelected={this.state.numberOfSelected}

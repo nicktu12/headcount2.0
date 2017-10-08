@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Card extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state= {
-      active: false
-    };
+  constructor() {
+    super();
     this.clickCard = this.clickCard.bind(this);
   }
 
@@ -15,29 +12,23 @@ class Card extends Component {
       {
         newProps: nextProps
       }
-    )
+    );
   }
 
   clickCard() {
-    if (this.props.numberOfSelected < 2) {
-      console.log('one');
-      this.setState({
-        active: !this.state.active
-      });
 
-    }
-    console.log('two');
     this.props.handleClick(this.props.location);
   }
 
   render() {
-    let dataNode = this.props.dataNode;
+    let dataNode  = this.props.dataNode;
     let keysArray = Object.keys(dataNode);
-    let average = 0;
+    let average   = 0;
+    let active    = this.props.schoolsSelected.indexOf(this.props.location) !== -1;
 
     return (
       <button
-        className={this.state.active ? "card active" : "card"}
+        className={active ? "card active" : "card"}
         onClick={this.clickCard}>
         <h1 className="card-header">
           {this.props.location}
@@ -79,7 +70,8 @@ Card.propTypes = {
   dataNode: PropTypes.objectOf(PropTypes.number),
   location: PropTypes.string,
   handleClick: PropTypes.func,
-  numberOfSelected: PropTypes.number
+  numberOfSelected: PropTypes.number,
+  schoolsSelected: PropTypes.array
 };
 
 export default Card;
