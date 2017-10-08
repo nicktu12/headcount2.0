@@ -20,11 +20,12 @@ class Card extends Component {
     this.props.handleClick(this.props.location);
   }
 
-  render(props) {
+  render() {
     let dataNode  = this.props.dataNode;
     let keysArray = Object.keys(dataNode);
     let average   = 0;
     let active    = this.props.schoolsSelected.indexOf(this.props.location) !== -1;
+
     return (
       <button
         className={active ? "card active" : "card"}
