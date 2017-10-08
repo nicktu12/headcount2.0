@@ -17,20 +17,40 @@ describe('Card', () => {
     const renderedComponent = shallow(
       <Card location="tacolandiaville" dataNode={{it: 666}} />
     );
+
     expect(renderedComponent).toMatchSnapshot();
   });
 
   it('should have default state', () => {
-    const renderedComponent = shallow(
+    const renderedComponent = mount(
       <Card
         dataNode={{2000: 1, 2001: 2}}
         location="ADAMS COUNTY 14"
-        numberOfSelected= {0}
+        numberOfSelected={0}
       />
     );
-    const initialState = renderedComponent.state().active
+    console.log(renderedComponent.debug());
+    const initialState = renderedComponent.state().active;
 
-    expect(initialState).toEqual(false)
+    expect(initialState).toEqual(false);
+  });
+
+  it('should update state when card is clicked from inactive to active', ()=>{
+    const renderedComponent = mount(
+      <Card
+        dataNode={{2000: 1, 2001: 2}}
+        location="ADAMS COUNTY 14"
+        numberOfSelected={0}
+      />
+    );
+    const initialState = renderedComponent.state().active;
+    const cardButton =  renderedComponent.find('.card');
+
+    expect(initialState).toEqual(false);
+
+    cardButton.simulate('click');
+
+    expect(renderedComponent.state().toEqual(true));
   });
 
   it('should render paragraph containers for each key of dataNode', () => {
@@ -45,6 +65,5 @@ describe('Card', () => {
     expect(renderedComponent.find('.p-container').length).toEqual(2)
   });
 
-  // write test to mock click card function to flip active state
 
 });
