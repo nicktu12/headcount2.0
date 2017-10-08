@@ -24,6 +24,7 @@ class CompareContainer extends Component {
                 key={index}
                 handleClick={this.props.handleCompareClick}
                 numberOfSelected={this.props.numberOfSelected}
+                schoolsSelected={this.props.schoolsSelected}
                 // cardAverage={}
               />
             );
@@ -39,7 +40,7 @@ class CompareContainer extends Component {
       </div>
     );
   }
-};
+}
 
 CompareContainer.propTypes = {
   selectedCards: PropTypes.func,
