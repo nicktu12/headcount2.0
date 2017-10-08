@@ -2,20 +2,14 @@ import React from 'react';
 // import Card from './Card';
 import PropTypes from 'prop-types';
 
-const ComparedCard = (props) => {
-
+const ComparedCard = ({ compareData, schoolsSelected, selectedCards }) => {
 
   return (
-    <div>
-      <div className="compared-cards">
-        {
-          props.compareData(props.selectedCards(props.schoolsSelected)) &&
-          props.compareData(props.selectedCards(props.schoolsSelected)).compared
-        }
-      </div>
-      <button>
-        Clear Comparison
-      </button>
+    <div className="compared-cards">
+      {
+        compareData(selectedCards(schoolsSelected)) &&
+        compareData(selectedCards(schoolsSelected)).compared
+      }
     </div>
   );
 };

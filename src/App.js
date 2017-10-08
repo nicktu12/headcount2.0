@@ -84,14 +84,13 @@ class App extends Component {
 
     //this code is breaking our shit/stuff
 
-    const locationFound = this.state.schoolsSelected.find((location) => {
-      return location;
-    });
+    // const locationFound = this.state.schoolsSelected.find((location) => {
+    //   return location;
+    // });
     const numSelected = this.state.numberOfSelected;
 
     console.log(location);
-    console.log(locationFound);
-    if (numSelected < 2 && !locationFound) {
+    if (numSelected < 2) {
       this.setState({
         numberOfSelected: numSelected + 1,
         schoolsSelected: this.state.schoolsSelected.concat(location)
