@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 class Card extends Component {
   constructor() {
     super();
+    
     this.clickCard = this.clickCard.bind(this);
   }
 

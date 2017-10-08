@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Card from './Card';
-import ComparedCard from './ComparedCard';
+import Card from '../Card/Card';
+import ComparedCard from '../ComparedCard/ComparedCard';
 import PropTypes from 'prop-types';
 
 class CompareContainer extends Component {

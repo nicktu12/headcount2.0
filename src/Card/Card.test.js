@@ -62,7 +62,7 @@ describe('Card', () => {
       />
     );
 
-    expect(renderedComponent.find('.p-container').length).toEqual(2)
+    expect(renderedComponent.find('.p-container').length).toEqual(2);
   });
 
 
