@@ -6,21 +6,21 @@ ShallowWrapper {
     kinderData={
         Array [
             Object {
-              "data": Object {
+              "districtData": Object {
                 "2004": 2,
                 "2005": 3,
               },
               "location": "Akron",
             },
             Object {
-              "data": Object {
+              "districtData": Object {
                 "2004": 0.03,
                 "2005": 2,
               },
               "location": "Colorado",
             },
             Object {
-              "data": Object {
+              "districtData": Object {
                 "2004": 6,
                 "2005": 3,
               },
@@ -42,35 +42,23 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Card
-          dataNode={
-                    Object {
-                              "2004": 2,
-                              "2005": 3,
-                            }
-          }
+          dataNode={undefined}
           handleClick={undefined}
           location="Akron"
-          numberOfSelected={undefined} />,
+          numberOfSelected={undefined}
+          schoolsSelected={undefined} />,
         <Card
-          dataNode={
-                    Object {
-                              "2004": 0.03,
-                              "2005": 2,
-                            }
-          }
+          dataNode={undefined}
           handleClick={undefined}
           location="Colorado"
-          numberOfSelected={undefined} />,
+          numberOfSelected={undefined}
+          schoolsSelected={undefined} />,
         <Card
-          dataNode={
-                    Object {
-                              "2004": 6,
-                              "2005": 3,
-                            }
-          }
+          dataNode={undefined}
           handleClick={undefined}
           location="Summit"
-          numberOfSelected={undefined} />,
+          numberOfSelected={undefined}
+          schoolsSelected={undefined} />,
       ],
       "className": "card-container",
     },
@@ -81,13 +69,11 @@ ShallowWrapper {
         "key": "0",
         "nodeType": "class",
         "props": Object {
-          "dataNode": Object {
-            "2004": 2,
-            "2005": 3,
-          },
+          "dataNode": undefined,
           "handleClick": undefined,
           "location": "Akron",
           "numberOfSelected": undefined,
+          "schoolsSelected": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -98,13 +84,11 @@ ShallowWrapper {
         "key": "1",
         "nodeType": "class",
         "props": Object {
-          "dataNode": Object {
-            "2004": 0.03,
-            "2005": 2,
-          },
+          "dataNode": undefined,
           "handleClick": undefined,
           "location": "Colorado",
           "numberOfSelected": undefined,
+          "schoolsSelected": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -115,13 +99,11 @@ ShallowWrapper {
         "key": "2",
         "nodeType": "class",
         "props": Object {
-          "dataNode": Object {
-            "2004": 6,
-            "2005": 3,
-          },
+          "dataNode": undefined,
           "handleClick": undefined,
           "location": "Summit",
           "numberOfSelected": undefined,
+          "schoolsSelected": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -138,35 +120,23 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Card
-            dataNode={
-                        Object {
-                                    "2004": 2,
-                                    "2005": 3,
-                                  }
-            }
+            dataNode={undefined}
             handleClick={undefined}
             location="Akron"
-            numberOfSelected={undefined} />,
+            numberOfSelected={undefined}
+            schoolsSelected={undefined} />,
           <Card
-            dataNode={
-                        Object {
-                                    "2004": 0.03,
-                                    "2005": 2,
-                                  }
-            }
+            dataNode={undefined}
             handleClick={undefined}
             location="Colorado"
-            numberOfSelected={undefined} />,
+            numberOfSelected={undefined}
+            schoolsSelected={undefined} />,
           <Card
-            dataNode={
-                        Object {
-                                    "2004": 6,
-                                    "2005": 3,
-                                  }
-            }
+            dataNode={undefined}
             handleClick={undefined}
             location="Summit"
-            numberOfSelected={undefined} />,
+            numberOfSelected={undefined}
+            schoolsSelected={undefined} />,
         ],
         "className": "card-container",
       },
@@ -177,13 +147,11 @@ ShallowWrapper {
           "key": "0",
           "nodeType": "class",
           "props": Object {
-            "dataNode": Object {
-              "2004": 2,
-              "2005": 3,
-            },
+            "dataNode": undefined,
             "handleClick": undefined,
             "location": "Akron",
             "numberOfSelected": undefined,
+            "schoolsSelected": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -194,13 +162,11 @@ ShallowWrapper {
           "key": "1",
           "nodeType": "class",
           "props": Object {
-            "dataNode": Object {
-              "2004": 0.03,
-              "2005": 2,
-            },
+            "dataNode": undefined,
             "handleClick": undefined,
             "location": "Colorado",
             "numberOfSelected": undefined,
+            "schoolsSelected": undefined,
           },
           "ref": null,
           "rendered": null,
@@ -211,13 +177,11 @@ ShallowWrapper {
           "key": "2",
           "nodeType": "class",
           "props": Object {
-            "dataNode": Object {
-              "2004": 6,
-              "2005": 3,
-            },
+            "dataNode": undefined,
             "handleClick": undefined,
             "location": "Summit",
             "numberOfSelected": undefined,
+            "schoolsSelected": undefined,
           },
           "ref": null,
           "rendered": null,

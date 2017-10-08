@@ -1,16 +1,17 @@
 import ReactDom from 'react-dom';
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import CompareContainer from './CompareContainer';
+import ComparedCard from './ComparedCard';
 
-describe('Compare Container', ()=>{
-  it('should match the Compare Container snapshot', () => {
+describe('Compare card', ()=>{
+  it('should match the Compare card snapshot', () => {
     const renderedComponent = shallow(
-      <CompareContainer />
+      <ComparedCard
+        selectedCards={jest.fn()}
+        compareData={jest.fn()}
+      />
     );
-    console.log(renderedComponent.debug());
 
     expect(renderedComponent).toMatchSnapshot();
-    expect(true).toEqual(true);
   });
 });

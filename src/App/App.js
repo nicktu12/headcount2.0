@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Helper from '../index/helper';
+import Helper from '../helper';
 import CardContainer from '../CardContainer/CardContainer';
 import CompareContainer from '../CompareContainer/CompareContainer';
 import DataButton from '../DataButton/DataButton';
