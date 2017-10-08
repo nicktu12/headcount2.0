@@ -6,12 +6,14 @@ import PropTypes from 'prop-types';
 class CompareContainer extends Component {
 
   shouldComponentUpdate(nextProps, nextState){
-    return this.props.schoolsSelected[0] !== nextProps.schoolsSelected[1]
-    && this.props.schoolsSelected !== undefined;
+    const schoolsSelected = this.props.schoolsSelected;
+    return schoolsSelected[0] !== nextProps.schoolsSelected[1]
+    && schoolsSelected !== undefined;
   }
 
   render(){
-    const array = this.props.selectedCards(this.props.schoolsSelected);
+    const schoolsSelected = this.props.schoolsSelected;
+    const array = this.props.selectedCards(schoolsSelected);
 
     return (
       <div>
@@ -24,8 +26,7 @@ class CompareContainer extends Component {
                 key={index}
                 handleClick={this.props.handleCompareClick}
                 numberOfSelected={this.props.numberOfSelected}
-                schoolsSelected={this.props.schoolsSelected}
-                // cardAverage={}
+                schoolsSelected={schoolsSelected}
               />
             );
           })}
@@ -33,7 +34,7 @@ class CompareContainer extends Component {
         <div>
           <ComparedCard
             compareData={this.props.compareData}
-            schoolsSelected={this.props.schoolsSelected}
+            schoolsSelected={schoolsSelected}
             selectedCards={this.props.selectedCards}
           />
         </div>

@@ -8,16 +8,17 @@ export default class DistrictRepository {
     let returnArray = [];
 
     kinderData.forEach((dataObj, idx) => {
+      let objectLoc = dataObj.Location;
 
-      if (uniqueArray.indexOf(dataObj.Location) === -1) {
-        uniqueArray.push(dataObj.Location);
+      if (uniqueArray.indexOf(objectLoc) === -1) {
+        uniqueArray.push(objectLoc);
         returnArray.push(
-          {"location": dataObj.Location.toUpperCase(), "data": {}}
+          {"location": objectLoc.toUpperCase(), "data": {}}
         );
       }
 
       returnArray.forEach((returnObj) => {
-        if (returnObj.location.toUpperCase()===dataObj.Location.toUpperCase()) {
+        if (returnObj.location.toUpperCase()===objectLoc.toUpperCase()) {
           if (isNaN(dataObj.Data)) {
             dataObj.Data = 0;
           }

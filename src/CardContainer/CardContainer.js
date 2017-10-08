@@ -3,14 +3,6 @@ import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
 const CardContainer = (props) => {
-
-
-  // componentWillReceiveProps(nextProps){
-  //   this.setState({
-  //     arrayData: nextProps.kinderData
-  //   });
-  // }
-
   return (
     <div className="card-container">
       {props.kinderData.map((singleData, index)=>{
@@ -22,7 +14,6 @@ const CardContainer = (props) => {
             key={index}
             handleClick={props.handleClick}
             numberOfSelected={props.numberOfSelected}
-            // cardAverages={props.cardAverages}
           />
         );
       })}
