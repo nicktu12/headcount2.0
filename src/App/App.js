@@ -35,7 +35,7 @@ class App extends Component {
         {name: "Median Household Income", districtData: medianIncomeData},
         {name: "Online Enrollment", districtData: onlineEnrollmentData},
         {name: "Pupil Enrollment", districtData: pupilEnrollmentData},
-        {name: "Remediation in Higher Education", districtData: remediationData},
+        {name: "Remediation in Higher Education", districtData:remediationData},
         {name: "School Aged Children in Poverty", districtData: povertyData},
         {name: "Special Education Data", districtData: specEdData},
         {name: "Title I Students", districtData: titleIData}
