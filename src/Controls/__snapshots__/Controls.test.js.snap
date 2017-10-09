@@ -41,15 +41,15 @@ ShallowWrapper {
           <DataButton
                     changeDataSet={[Function]}
                     dataName="HS Graduation Rates"
-                    dataSet={undefined} />
+                    dataSet={1} />
           <DataButton
                     changeDataSet={[Function]}
                     dataName="Kindergartens in Full Day Program"
-                    dataSet={undefined} />
+                    dataSet={2} />
           <DataButton
                     changeDataSet={[Function]}
                     dataName="Grade 3 Test Data"
-                    dataSet={undefined} />
+                    dataSet={3} />
 </div>,
         <p
           className="welcome">
@@ -77,15 +77,15 @@ ShallowWrapper {
             <DataButton
               changeDataSet={[Function]}
               dataName="HS Graduation Rates"
-              dataSet={undefined} />,
+              dataSet={1} />,
             <DataButton
               changeDataSet={[Function]}
               dataName="Kindergartens in Full Day Program"
-              dataSet={undefined} />,
+              dataSet={2} />,
             <DataButton
               changeDataSet={[Function]}
               dataName="Grade 3 Test Data"
-              dataSet={undefined} />,
+              dataSet={3} />,
           ],
           "className": "data-button-container",
         },
@@ -98,7 +98,7 @@ ShallowWrapper {
             "props": Object {
               "changeDataSet": [Function],
               "dataName": "HS Graduation Rates",
-              "dataSet": undefined,
+              "dataSet": 1,
             },
             "ref": null,
             "rendered": null,
@@ -111,7 +111,7 @@ ShallowWrapper {
             "props": Object {
               "changeDataSet": [Function],
               "dataName": "Kindergartens in Full Day Program",
-              "dataSet": undefined,
+              "dataSet": 2,
             },
             "ref": null,
             "rendered": null,
@@ -124,7 +124,7 @@ ShallowWrapper {
             "props": Object {
               "changeDataSet": [Function],
               "dataName": "Grade 3 Test Data",
-              "dataSet": undefined,
+              "dataSet": 3,
             },
             "ref": null,
             "rendered": null,
@@ -187,15 +187,15 @@ ShallowWrapper {
             <DataButton
                         changeDataSet={[Function]}
                         dataName="HS Graduation Rates"
-                        dataSet={undefined} />
+                        dataSet={1} />
             <DataButton
                         changeDataSet={[Function]}
                         dataName="Kindergartens in Full Day Program"
-                        dataSet={undefined} />
+                        dataSet={2} />
             <DataButton
                         changeDataSet={[Function]}
                         dataName="Grade 3 Test Data"
-                        dataSet={undefined} />
+                        dataSet={3} />
 </div>,
           <p
             className="welcome">
@@ -223,15 +223,15 @@ ShallowWrapper {
               <DataButton
                 changeDataSet={[Function]}
                 dataName="HS Graduation Rates"
-                dataSet={undefined} />,
+                dataSet={1} />,
               <DataButton
                 changeDataSet={[Function]}
                 dataName="Kindergartens in Full Day Program"
-                dataSet={undefined} />,
+                dataSet={2} />,
               <DataButton
                 changeDataSet={[Function]}
                 dataName="Grade 3 Test Data"
-                dataSet={undefined} />,
+                dataSet={3} />,
             ],
             "className": "data-button-container",
           },
@@ -244,7 +244,7 @@ ShallowWrapper {
               "props": Object {
                 "changeDataSet": [Function],
                 "dataName": "HS Graduation Rates",
-                "dataSet": undefined,
+                "dataSet": 1,
               },
               "ref": null,
               "rendered": null,
@@ -257,7 +257,7 @@ ShallowWrapper {
               "props": Object {
                 "changeDataSet": [Function],
                 "dataName": "Kindergartens in Full Day Program",
-                "dataSet": undefined,
+                "dataSet": 2,
               },
               "ref": null,
               "rendered": null,
@@ -270,7 +270,7 @@ ShallowWrapper {
               "props": Object {
                 "changeDataSet": [Function],
                 "dataName": "Grade 3 Test Data",
-                "dataSet": undefined,
+                "dataSet": 3,
               },
               "ref": null,
               "rendered": null,

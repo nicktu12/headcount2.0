@@ -29,8 +29,8 @@ describe('Controls', ()=>{
       helper={helper}
       handleClick={mockFunc}
     />);
-    const contLength = controls.find('.data-button-container').children().length;
-    expect(contLength).toEqual(3);
+    const conLength = controls.find('.data-button-container').children().length;
+    expect(conLength).toEqual(3);
   });
 
   it('should match snapshot', () => {
