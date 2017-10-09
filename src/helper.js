@@ -43,7 +43,6 @@ export default class DistrictRepository {
         returnObj = dataObj;
       }
     });
-
     return returnObj;
   }
 
@@ -52,7 +51,6 @@ export default class DistrictRepository {
       let returnArray = [];
 
       inputName = inputName.toUpperCase();
-
       returnArray = this.kinderData.filter((dataObj) => {
         if (dataObj.location.indexOf(inputName) !== -1) {
           return true;
@@ -66,17 +64,17 @@ export default class DistrictRepository {
     }
   }
 
-  findAverage(inputName, returnSchoolName) {
+  findAverage(inputName, returnedSchool) {
     let school = this.findByName(inputName);
-    let count = 0;
-    let sum = 0;
+    let count  = 0;
+    let sum    = 0;
     for (let year in school.data) {
       if (typeof year === 'string') {
         count++;
         sum += school.data[year];
       }
     }
-    if (returnSchoolName) {
+    if (returnedSchool) {
       return {
         location: school.location,
         average: Math.round((sum / count) * 1000) / 1000
@@ -87,7 +85,6 @@ export default class DistrictRepository {
   }
 
   compareDistrictAverages(inputNameOne, inputNameTwo) {
-
     let schoolOne = this.findAverage(inputNameOne, true);
     let schoolTwo = this.findAverage(inputNameTwo, true);
 
@@ -96,14 +93,9 @@ export default class DistrictRepository {
     returnObj[schoolOne.location] = schoolOne.average;
     returnObj[schoolTwo.location] = schoolTwo.average;
 
-    // Ask why we are dividing here
-    // let comparison = Math.abs(schoolOne.average - schoolTwo.average);
-
     let comparison = schoolOne.average / schoolTwo.average;
     returnObj.compared = Math.round(comparison * 1000) / 1000;
 
     return returnObj;
-
   }
-
 }
