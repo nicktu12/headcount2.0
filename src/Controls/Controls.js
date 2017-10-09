@@ -21,7 +21,8 @@ class Controls extends Component {
     });
   }
 
-  render() {
+  render(props) {
+    console.log(this.props);
     return (
       <div>
         <div className="data-button-container">
