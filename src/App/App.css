@@ -1,7 +1,6 @@
 .app-render {
   text-align: center;
-  background-color: #8a8d90;
-  padding-top: 10px; }
+  background-image: url("../../assets/books-bg.jpg"); }
 
 .search-input {
   height: 25px;

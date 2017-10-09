@@ -20,7 +20,7 @@ class App extends Component {
     super();
 
     this.helper = new Helper(kinderData);
-    this.kinderData =  this.helper.kinderData;
+    // this.kinderData =  this.helper.kinderData;
     this.state = {
       school: null,
       years: [],

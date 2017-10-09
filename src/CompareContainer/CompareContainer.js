@@ -21,12 +21,12 @@ class CompareContainer extends Component {
           {array.map((singleData, index)=>{
             return (
               <Card
+                schoolsSelected={schoolsSelected}
                 location={singleData.location}
                 dataNode={singleData.data}
                 key={index}
                 handleClick={this.props.handleCompareClick}
                 numberOfSelected={this.props.numberOfSelected}
-                schoolsSelected={schoolsSelected}
               />
             );
           })}

@@ -6,7 +6,10 @@ const ComparedCard = ({ compareData, schoolsSelected, selectedCards }) => {
     <div className="compared-cards">
       {
         compareData(selectedCards(schoolsSelected)) &&
-        compareData(selectedCards(schoolsSelected)).compared
+        <div>
+          District Comparison: &nbsp;
+          {compareData(selectedCards(schoolsSelected)).compared * 100} %
+        </div>
       }
     </div>
   );
