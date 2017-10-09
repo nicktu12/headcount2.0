@@ -28,7 +28,7 @@ class App extends Component {
       dataSet: (new Helper(kinderData)).kinderData,
       dataArray: [
         {name: "HS Graduation Rates", districtData: hsGradRatesData},
-        {name: "Kindergartens in Full Day Program", districtData: kinderData},
+        {name: "Kindergarteners in Full Day Program", districtData: kinderData},
         {name: "Grade 3 Test Data", districtData: thirdGradeTestData},
         {name: "Grade 8 Test Data", districtData: eighthGradeTestData},
         {name: "Median Household Income", districtData: medianIncomeData},
