@@ -16,7 +16,6 @@ import specEdData from '../../data/special_education';
 import titleIData from '../../data/title_i_students';
 
 class App extends Component {
-
   constructor() {
     super();
 
