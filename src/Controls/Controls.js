@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import DataButton from '../DataButton/DataButton';
+import SearchList from './SearchList';
 
 class Controls extends Component {
   constructor() {
@@ -42,25 +43,10 @@ class Controls extends Component {
           value={ this.state.inputValue }
           onChange={this.onChange}
         />
-        <ul className="search-list">
-          {this.state.possibleMatches.map((location, index, event) => {
-            return (
-              <li
-                href="location"
-                className="list-items"
-                key={index}
-              >
-                <button
-                  onClick={() => {
-                    this.props.handleClick(location.location);
-                  }}
-                >{location.location}
-                </button>
-
-              </li>
-            );
-          })}
-        </ul>
+        <SearchList
+          possibleMatches={this.state.possibleMatches}
+          handleClick={this.props.handleClick}
+        />
       </div>
     );
   }
