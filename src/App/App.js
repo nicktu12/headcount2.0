@@ -20,7 +20,7 @@ class App extends Component {
     super();
 
     this.helper = new Helper(kinderData);
-    this.kinderData =  this.helper.kinderData;
+    // this.kinderData =  this.helper.kinderData;
     this.state = {
       school: null,
       years: [],
@@ -116,8 +116,8 @@ class App extends Component {
           handleClick={this.handleClick}
         />
         <CompareContainer
-          selectedCards={this.selectedCards.bind(this)}
           schoolsSelected={this.state.schoolsSelected}
+          selectedCards={this.selectedCards.bind(this)}
           compareData={this.comparedCardAverages}
           handleCompareClick={this.handleCompareClick}
         />

@@ -37,6 +37,7 @@ class Controls extends Component {
             );
           })}
         </div>
+        <p className="welcome">Click on any two districts to compare data</p>
         <input
           className="search-input"
           placeholder="Search for School Here"
