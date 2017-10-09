@@ -2,37 +2,53 @@
 
 .card {
   display: inline-block;
-  width: 200px;
+  width: 250px;
+  height: 250px;
+  overflow: scroll;
   font-size: .85em;
   margin: 10px;
   border: none;
   border-radius: $border-radius;
-  background-color: rgb(37, 132, 228);
+  background-color: $light-primary-o;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  background-color: $light-primary;
+  border: 5px solid $pop-accent;
 }
 
 .active {
-  border: 2px solid green;
+  border: 5px solid $pop-accent;
 }
 
 .card-header {
+  font-family: $montserrat;
   font-size: 1.05em;
   font-weight: bold;
   margin: 5px;
   text-align: center;
 }
 
-.p-container {
+.p-container p {
   width: 80px;
   margin: 10px auto 10px auto;
+  font-family: $open-sans;
 }
 
 .less-than-half {
-  color: red;
+  color: $neg-primary;
   font-size: .75em;
 }
 
 .more-than-half {
-  color: green;
+  color: $pos-accent;
   font-size: .85em;
   font-weight: bold;
+  text-decoration: underline;
+}
+
+.district-average {
+  font-family: $montserrat;
 }

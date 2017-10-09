@@ -7,13 +7,13 @@ class Card extends Component {
     this.clickCard = this.clickCard.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState(
-      {
-        newProps: nextProps
-      }
-    );
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState(
+  //     {
+  //       newProps: nextProps
+  //     }
+  //   );
+  // }
 
   clickCard() {
     this.props.handleClick(this.props.location);

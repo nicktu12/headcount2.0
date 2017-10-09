@@ -1,38 +1,57 @@
 .card {
   display: inline-block;
-  width: 200px;
+  width: 250px;
+  height: 250px;
+  overflow: scroll;
   font-size: .85em;
   margin: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #2584e4; }
+  background-color: rgba(255, 254, 213, 0.85);
+  padding: 10px;
+  box-sizing: border-box; }
+
+.card:hover {
+  background-color: #fffed5;
+  border: 5px solid #25ced1; }
 
 .active {
-  border: 2px solid green; }
+  border: 5px solid #25ced1; }
 
 .card-header {
+  font-family: "Montserrat", sans-serif;
   font-size: 1.05em;
   font-weight: bold;
   margin: 5px;
   text-align: center; }
 
-.p-container {
+.p-container p {
   width: 80px;
-  margin: 10px auto 10px auto; }
+  margin: 10px auto 10px auto;
+  font-family: "Open Sans", sans-serif; }
 
 .less-than-half {
-  color: red;
+  color: #d9594c;
   font-size: .75em; }
 
 .more-than-half {
-  color: green;
+  color: #85a335;
   font-size: .85em;
-  font-weight: bold; }
+  font-weight: bold;
+  text-decoration: underline; }
+
+.district-average {
+  font-family: "Montserrat", sans-serif; }
+
+.compared-cards {
+  color: #25ced1;
+  height: 50px;
+  text-align: center;
+  padding-top: 15px; }
 
 .app-render {
   text-align: center;
-  background-color: #8a8d90;
-  padding-top: 10px; }
+  background-image: url("../../assets/books-bg.jpg"); }
 
 .search-input {
   height: 25px;
@@ -58,22 +77,25 @@
   text-align: left;
   text-decoration: none; }
 
+.welcome {
+  font-family: "Montserrat", sans-serif;
+  padding: 12px;
+  font-size: 3em;
+  color: #fffed5; }
+
+.data-container button {
+  padding: 5px;
+  height: 72px;
+  font-family: "Montserrat", sans-serif; }
+
 .card-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap; }
 
 .compare-container {
-  background-repeat: no-repeat;
-  background-size: 100%;
   display: flex;
   justify-content: space-around; }
-
-.compared-cards {
-  color: black;
-  height: 50px;
-  text-align: center;
-  padding-top: 15px; }
 
 * {
   margin: 0;
