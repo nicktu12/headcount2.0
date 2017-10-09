@@ -26,7 +26,6 @@ CardContainer.propTypes = {
   kinderData: PropTypes.array.isRequired,
   numberOfSelected: PropTypes.number,
   handleClick: PropTypes.func,
-  cardAverages: PropTypes.func,
   schoolsSelected: PropTypes.array
 };
 

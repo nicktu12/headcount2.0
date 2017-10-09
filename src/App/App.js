@@ -84,10 +84,6 @@ class App extends Component {
     });
   }
 
-  cardAverages(schoolName) {
-    this.helper.findAverage(schoolName, true);
-  }
-
   comparedCardAverages(schools) {
     const array = schools.map((school)=>{
       return school.location;
