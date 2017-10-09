@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ComparedCard = ({ compareData, schoolsSelected, selectedCards }) => {
-
   return (
     <div className="compared-cards">
       {
