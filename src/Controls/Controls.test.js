@@ -3,8 +3,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Controls from './Controls';
 import helper from '../helper';
-import config from '../setupTests';
-import Adapter from 'enzyme-adapter-react-15';
 
 
 describe('Controls', ()=>{

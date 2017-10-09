@@ -23,4 +23,63 @@ describe('DistrictRepository iteration 0', () =>  {
     expect(district.compareDistrictAverages('ACADEMY 20', 'Colorado')).toEqual(result);
   });
 
+  test('formatData to clean up good data', () => {
+    const dataSet =
+        [
+          {
+            "Location": "Colorado",
+            "Score": "Math",
+            "TimeFrame": 2008,
+            "DataFormat": "Percent",
+            "Data": 0.697
+          },
+          {
+            "Location": "Colorado",
+            "Score": "Math",
+            "TimeFrame": 2009,
+            "DataFormat": "Percent",
+            "Data": 0.691
+          },
+          {
+            "Location": "Colorado",
+            "Score": "Math",
+            "TimeFrame": 2010,
+            "DataFormat": "Percent",
+            "Data": 0.706
+          }
+        ];
+    const expectedResult = [{"data": {"2008": 0.697, "2009": 0.691, "2010": 0.706}, "location": "COLORADO"}]
+    expect(district.formatData(dataSet)).toEqual(expectedResult)
+  });
+
+  test('formatData to clean up bad data by inserting zero for value', () => {
+    const dataSet =
+        [
+          {
+            "Location": "Colorado",
+            "Score": "Math",
+            "TimeFrame": 2008,
+            "DataFormat": "Percent",
+            "Data": NaN
+          },
+          {
+            "Location": "Colorado",
+            "Score": "Math",
+            "TimeFrame": 2009,
+            "DataFormat": "Percent",
+            "Data": 0.691
+          },
+          {
+            "Location": "Colorado",
+            "Score": "Math",
+            "TimeFrame": 2010,
+            "DataFormat": "Percent",
+            "Data": NaN
+          }
+        ];
+    const expectedResult = [{"data": {"2008": 0, "2009": 0.691, "2010": 0}, "location": "COLORADO"}];
+    
+    expect(district.formatData(dataSet)).toEqual(expectedResult);
+  });
+
 });
