@@ -57,7 +57,7 @@ Controls.propTypes = {
   dataArray: PropTypes.arrayOf(PropTypes.object),
   changeDataSet: PropTypes.func,
   handleClick: PropTypes.func,
-  helper: PropTypes.object,
+  helper: PropTypes.func,
   districtData: PropTypes.object
 };
 

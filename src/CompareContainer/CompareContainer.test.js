@@ -5,6 +5,6 @@ import CompareContainer from './CompareContainer';
 
 describe('Compare Container', ()=>{
   it('should render compared data between data points', () => {
-    expect(true).toBe(true)
+    expect(true).toBe(true);
   });
 });

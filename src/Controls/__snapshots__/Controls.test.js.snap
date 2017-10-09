@@ -1,0 +1,333 @@
+exports[`Controls should match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Controls
+    changeDataSet={[Function]}
+    dataArray={
+        Array [
+            Object {
+              "districtData": 1,
+              "name": "HS Graduation Rates",
+            },
+            Object {
+              "districtData": 2,
+              "name": "Kindergartens in Full Day Program",
+            },
+            Object {
+              "districtData": 3,
+              "name": "Grade 3 Test Data",
+            },
+          ]
+    }
+    handleClick={[Function]}
+    helper={[Function]}
+    onChange={[Function]} />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="data-button-container">
+          <DataButton
+                    changeDataSet={[Function]}
+                    dataName="HS Graduation Rates"
+                    dataSet={undefined} />
+          <DataButton
+                    changeDataSet={[Function]}
+                    dataName="Kindergartens in Full Day Program"
+                    dataSet={undefined} />
+          <DataButton
+                    changeDataSet={[Function]}
+                    dataName="Grade 3 Test Data"
+                    dataSet={undefined} />
+</div>,
+        <p
+          className="welcome">
+          Click on any two districts to compare data
+</p>,
+        <input
+          className="search-input"
+          onChange={[Function]}
+          placeholder="Search for School Here"
+          type="text"
+          value="" />,
+        <SearchList
+          handleClick={[Function]}
+          possibleMatches={Array []} />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <DataButton
+              changeDataSet={[Function]}
+              dataName="HS Graduation Rates"
+              dataSet={undefined} />,
+            <DataButton
+              changeDataSet={[Function]}
+              dataName="Kindergartens in Full Day Program"
+              dataSet={undefined} />,
+            <DataButton
+              changeDataSet={[Function]}
+              dataName="Grade 3 Test Data"
+              dataSet={undefined} />,
+          ],
+          "className": "data-button-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "function",
+            "props": Object {
+              "changeDataSet": [Function],
+              "dataName": "HS Graduation Rates",
+              "dataSet": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "function",
+            "props": Object {
+              "changeDataSet": [Function],
+              "dataName": "Kindergartens in Full Day Program",
+              "dataSet": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "2",
+            "nodeType": "function",
+            "props": Object {
+              "changeDataSet": [Function],
+              "dataName": "Grade 3 Test Data",
+              "dataSet": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Click on any two districts to compare data",
+          "className": "welcome",
+        },
+        "ref": null,
+        "rendered": "Click on any two districts to compare data",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "className": "search-input",
+          "onChange": [Function],
+          "placeholder": "Search for School Here",
+          "type": "text",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "function",
+        "props": Object {
+          "handleClick": [Function],
+          "possibleMatches": Array [],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="data-button-container">
+            <DataButton
+                        changeDataSet={[Function]}
+                        dataName="HS Graduation Rates"
+                        dataSet={undefined} />
+            <DataButton
+                        changeDataSet={[Function]}
+                        dataName="Kindergartens in Full Day Program"
+                        dataSet={undefined} />
+            <DataButton
+                        changeDataSet={[Function]}
+                        dataName="Grade 3 Test Data"
+                        dataSet={undefined} />
+</div>,
+          <p
+            className="welcome">
+            Click on any two districts to compare data
+</p>,
+          <input
+            className="search-input"
+            onChange={[Function]}
+            placeholder="Search for School Here"
+            type="text"
+            value="" />,
+          <SearchList
+            handleClick={[Function]}
+            possibleMatches={Array []} />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <DataButton
+                changeDataSet={[Function]}
+                dataName="HS Graduation Rates"
+                dataSet={undefined} />,
+              <DataButton
+                changeDataSet={[Function]}
+                dataName="Kindergartens in Full Day Program"
+                dataSet={undefined} />,
+              <DataButton
+                changeDataSet={[Function]}
+                dataName="Grade 3 Test Data"
+                dataSet={undefined} />,
+            ],
+            "className": "data-button-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "function",
+              "props": Object {
+                "changeDataSet": [Function],
+                "dataName": "HS Graduation Rates",
+                "dataSet": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "function",
+              "props": Object {
+                "changeDataSet": [Function],
+                "dataName": "Kindergartens in Full Day Program",
+                "dataSet": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "2",
+              "nodeType": "function",
+              "props": Object {
+                "changeDataSet": [Function],
+                "dataName": "Grade 3 Test Data",
+                "dataSet": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Click on any two districts to compare data",
+            "className": "welcome",
+          },
+          "ref": null,
+          "rendered": "Click on any two districts to compare data",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "className": "search-input",
+            "onChange": [Function],
+            "placeholder": "Search for School Here",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "function",
+          "props": Object {
+            "handleClick": [Function],
+            "possibleMatches": Array [],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
