@@ -14,7 +14,6 @@ class CompareContainer extends Component {
   render(){
     const schoolsSelected = this.props.schoolsSelected;
     const array = this.props.selectedCards(schoolsSelected);
-
     return (
       <div>
         <div className="compare-container">
