@@ -22,7 +22,6 @@ class Controls extends Component {
   }
 
   render(props) {
-    console.log(this.props);
     return (
       <div>
         <div className="data-button-container">
@@ -30,7 +29,7 @@ class Controls extends Component {
             return (
               <DataButton
                 changeDataSet={this.props.changeDataSet}
-                dataSet={element.districtData}
+                dataSet={this.props.districtData}
                 dataName={element.name}
                 key={index}
               />
@@ -57,7 +56,8 @@ Controls.propTypes = {
   dataArray: PropTypes.arrayOf(PropTypes.object),
   changeDataSet: PropTypes.func,
   handleClick: PropTypes.func,
-  helper: PropTypes.object
+  helper: PropTypes.object,
+  districtData: PropTypes.object
 };
 
 export default Controls;
