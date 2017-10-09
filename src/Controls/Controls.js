@@ -29,7 +29,7 @@ class Controls extends Component {
             return (
               <DataButton
                 changeDataSet={this.props.changeDataSet}
-                dataSet={this.props.districtData}
+                dataSet={element.districtData}
                 dataName={element.name}
                 key={index}
               />

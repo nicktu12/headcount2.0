@@ -46,6 +46,7 @@ class App extends Component {
     this.handleCompareClick   = this.handleCompareClick.bind(this);
     this.comparedCardAverages = this.comparedCardAverages.bind(this);
     this.changeDataSet        = this.changeDataSet.bind(this);
+    this.selectedCards        = this.selectedCards.bind(this);
   }
 
   handleClick(location){
@@ -98,6 +99,8 @@ class App extends Component {
   }
 
   changeDataSet(dataSet) {
+    this.helper     = new Helper(dataSet);
+    this.kinderData = this.helper.kinderData;
     this.setState(
       {
         dataSet: (new Helper(dataSet)).kinderData
@@ -116,7 +119,7 @@ class App extends Component {
           handleClick={this.handleClick}
         />
         <CompareContainer
-          selectedCards={this.selectedCards.bind(this)}
+          selectedCards={this.selectedCards}
           schoolsSelected={this.state.schoolsSelected}
           compareData={this.comparedCardAverages}
           handleCompareClick={this.handleCompareClick}
