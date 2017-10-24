@@ -1,5 +1,7 @@
 # HeadCount 2.0
 
+![headcount](https://user-images.githubusercontent.com/20631355/31922678-a37826a2-b833-11e7-995b-3fe37355877f.gif
+
 HeadCount 2.0 is a project designed to challenge your skills at manipulating data and creating small, reusable React components.  
 
 You will start the project by importing files containing various educational stats from districts within Colorado by year, per district.  
