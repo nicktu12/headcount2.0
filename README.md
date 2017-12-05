@@ -40,7 +40,7 @@ npm run test
 
 ## Authors
 
-* **Nick Teets** [Guthub](https://github.com/nicktu12)
+* **Nick Teets** [Github](https://github.com/nicktu12)
 * **John Michael Boudreaux** [Github](https://github.com/johnmboudreaux)
 
 ## License
